@@ -1,0 +1,38 @@
+{
+  "1": {
+    "wait_min": 103.6011,
+    "service_min": 26.2779,
+    "hold_min": 3.8433,
+    "wait_pct": 77.4748,
+    "service_pct": 19.6511,
+    "hold_pct": 2.8741,
+    "count": 410
+  },
+  "2": {
+    "wait_min": 109.3119,
+    "service_min": 25.0923,
+    "hold_min": 4.9284,
+    "wait_pct": 78.4539,
+    "service_pct": 18.0089,
+    "hold_pct": 3.5372,
+    "count": 398
+  },
+  "3": {
+    "wait_min": 98.7779,
+    "service_min": 27.9377,
+    "hold_min": 5.9489,
+    "wait_pct": 74.4569,
+    "service_pct": 21.0589,
+    "hold_pct": 4.4842,
+    "count": 353
+  },
+  "4": {
+    "wait_min": 115.9052,
+    "service_min": 29.8748,
+    "hold_min": 4.3839,
+    "wait_pct": 77.1858,
+    "service_pct": 19.8948,
+    "hold_pct": 2.9194,
+    "count": 200
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "missing": [],
+  "matched_columns": {
+    "TAT - US SERVICE": "TAT - US SERVICE",
+    "TAT - U/S BILLING": "TAT - U/S BILLING",
+    "TAT - DISPATCH SERVICE": "TAT - DISPATCH SERVICE",
+    "XRAY - TAT SERVICE": "XRAY - TAT SERVICE",
+    "TAT - BILLING XRAY": "TAT - BILLING XRAY",
+    "TAT - CT SERVICE": "TAT - CT SERVICE",
+    "TAT - CT BILLING": "TAT - CT BILLING",
+    "TAT - MRI SEVICE": "TAT - MRI SEVICE",
+    "TAT - MRI BILLING": "TAT - MRI BILLING"
+  },
+  "result": {
+    "jan": {
+      "XR": {
+        "billing": "00:05",
+        "service": "00:04",
+        "dispatch": "01:20",
+        "pct": [
+          5.5,
+          4.4,
+          90.1
+        ],
+        "n": 1597
+      },
+      "MR": {
+        "billing": "00:12",
+        "service": "00:34",
+        "dispatch": "01:20",
+        "pct": [
+          9.2,
+          27.4,
+          63.4
+        ],
+        "n": 1597
+      },
+      "CT": {
+        "billing": "00:06",
+        "service": "00:10",
+        "dispatch": "01:20",
+        "pct": [
+          6.4,
+          10.4,
+          83.2
+        ],
+        "n": 1597
+      },
+      "US": {
+        "billing": "00:08",
+        "service": "00:28",
+        "dispatch": "01:20",
+        "pct": [
+          7.1,
+          24.3,
+          68.6
+        ],
+        "n": 1597
+      }
+    },
+    "feb": {
+      "XR": {
+        "billing": "00:06",
+        "service": "00:16",
+        "dispatch": "01:04",
+        "pct": [
+          6.8,
+          19.1,
+          74.1
+        ],
+        "n": 1474
+      },
+      "MR": {
+        "billing": "00:15",
+        "service": "00:38",
+        "dispatch": "01:04",
+        "pct": [
+          13.1,
+          32.3,
+          54.6
+        ],
+        "n": 1474
+      },
+      "CT": {
+        "billing": "00:06",
+        "service": "00:15",
+        "dispatch": "01:04",
+        "pct": [
+          6.8,
+          18.2,
+          75.0
+        ],
+        "n": 1474
+      },
+      "US": {
+        "billing": "00:09",
+        "service": "00:28",
+        "dispatch": "01:04",
+        "pct": [
+          8.5,
+          28.2,
+          63.3
+        ],
+        "n": 1474
+      }
+    },
+    "mar": {
+      "XR": {
+        "billing": "00:06",
+        "service": "00:16",
+        "dispatch": "01:05",
+        "pct": [
+          7.4,
+          17.8,
+          74.8
+        ],
+        "n": 1386
+      },
+      "MR": {
+        "billing": "00:12",
+        "service": "00:34",
+        "dispatch": "01:05",
+        "pct": [
+          10.9,
+          30.5,
+          58.6
+        ],
+        "n": 1386
+      },
+      "CT": {
+        "billing": "00:05",
+        "service": "00:17",
+        "dispatch": "01:05",
+        "pct": [
+          6.1,
+          19.7,
+          74.2
+        ],
+        "n": 1386
+      },
+      "US": {
+        "billing": "00:08",
+        "service": "00:27",
+        "dispatch": "01:05",
+        "pct": [
+          7.6,
+          27.3,
+          65.1
+        ],
+        "n": 1386
+      }
+    },
+    "apr": {
+      "XR": {
+        "billing": "00:08",
+        "service": "00:15",
+        "dispatch": "01:12",
+        "pct": [
+          8.0,
+          15.9,
+          76.1
+        ],
+        "n": 936
+      },
+      "MR": {
+        "billing": "00:13",
+        "service": "00:32",
+        "dispatch": "01:12",
+        "pct": [
+          10.7,
+          27.8,
+          61.5
+        ],
+        "n": 936
+      },
+      "CT": {
+        "billing": "00:05",
+        "service": "00:16",
+        "dispatch": "01:12",
+        "pct": [
+          5.1,
+          17.7,
+          77.2
+        ],
+        "n": 936
+      },
+      "US": {
+        "billing": "00:10",
+        "service": "00:32",
+        "dispatch": "01:12",
+        "pct": [
+          8.9,
+          28.3,
+          62.8
+        ],
+        "n": 936
+      }
+    }
+  }
+}
