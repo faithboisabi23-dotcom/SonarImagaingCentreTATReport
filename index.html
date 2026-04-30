@@ -1593,6 +1593,7 @@
         }
 
         function updateChartTitles() {
+            var mobile = isMobileView();
             var suffix = "All Dates";
             if (currentRange.start && currentRange.end) {
                 suffix = currentRange.start + " to " + currentRange.end;
@@ -1602,6 +1603,29 @@
                 suffix = "Up to " + currentRange.end;
             } else if (currentMonth !== "all") {
                 suffix = currentMonth;
+            }
+
+            if (mobile) {
+                setText("xray-trend-title", "DAILY TAT TREND - ACTUAL VS TARGET");
+                setText("mri-trend-title", "DAILY TAT TREND - ACTUAL VS TARGET");
+                setText("ct-trend-title", "DAILY TAT TREND - ACTUAL VS TARGET");
+                setText("us-trend-title", "DAILY TAT TREND - ACTUAL VS TARGET");
+
+                setText("xray-dist-title", "TAT DISTRIBUTION BY PROCESS");
+                setText("mri-dist-title", "TAT DISTRIBUTION BY PROCESS");
+                setText("ct-dist-title", "TAT DISTRIBUTION BY PROCESS");
+                setText("us-dist-title", "TAT DISTRIBUTION BY PROCESS");
+
+                setText("xray-billing-title", "BILLING STAGE BREAKDOWN");
+                setText("mri-billing-title", "BILLING STAGE BREAKDOWN");
+                setText("ct-billing-title", "BILLING STAGE BREAKDOWN");
+                setText("us-billing-title", "BILLING STAGE BREAKDOWN");
+
+                setText("xray-service-title", "SERVICE STAGE BREAKDOWN");
+                setText("mri-service-title", "SERVICE STAGE BREAKDOWN");
+                setText("ct-service-title", "SERVICE STAGE BREAKDOWN");
+                setText("us-service-title", "SERVICE STAGE BREAKDOWN");
+                return;
             }
 
             setText("xray-trend-title", "XRAY TAT Trend - " + suffix);
