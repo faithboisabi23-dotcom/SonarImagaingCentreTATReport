@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "totalTokens": 15636,
+    "completedTokens": 8276,
+    "pendingTokens": 1593,
+    "servingTokens": 89,
+    "eCompleteTokens": 1075,
+    "noShowTokens": 231,
+    "standbyTokens": 1183,
+    "completionRate": 52.9
+  }
+}

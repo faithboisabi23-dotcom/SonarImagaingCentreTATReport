@@ -1,0 +1,131 @@
+{
+  "categories": [
+    "AM",
+    "CT",
+    "EQ",
+    "LB",
+    "MRI",
+    "RC",
+    "RE",
+    "Ultrasound",
+    "XRAY"
+  ],
+  "actualMinutes": [
+    185.93,
+    192.11,
+    51.0,
+    105.54,
+    289.72,
+    16.79,
+    22.63,
+    140.17,
+    115.77
+  ],
+  "targetMinutes": [
+    null,
+    120.0,
+    null,
+    30.0,
+    149.97,
+    null,
+    null,
+    90.01,
+    60.0
+  ],
+  "actualLabels": [
+    "03:06",
+    "03:12",
+    "00:51",
+    "01:46",
+    "04:50",
+    "00:17",
+    "00:23",
+    "02:20",
+    "01:56"
+  ],
+  "targetLabels": [
+    "00:00",
+    "02:00",
+    "00:00",
+    "00:30",
+    "02:30",
+    "00:00",
+    "00:00",
+    "01:30",
+    "01:00"
+  ],
+  "modalities": [
+    {
+      "modality": "AM",
+      "actualMinutes": 185.93,
+      "targetMinutes": null,
+      "actualHHMM": "03:06",
+      "targetHHMM": "00:00",
+      "tokenCount": 19
+    },
+    {
+      "modality": "CT",
+      "actualMinutes": 192.11,
+      "targetMinutes": 120.0,
+      "actualHHMM": "03:12",
+      "targetHHMM": "02:00",
+      "tokenCount": 1295
+    },
+    {
+      "modality": "EQ",
+      "actualMinutes": 51.0,
+      "targetMinutes": null,
+      "actualHHMM": "00:51",
+      "targetHHMM": "00:00",
+      "tokenCount": 19
+    },
+    {
+      "modality": "LB",
+      "actualMinutes": 105.54,
+      "targetMinutes": 30.0,
+      "actualHHMM": "01:46",
+      "targetHHMM": "00:30",
+      "tokenCount": 79
+    },
+    {
+      "modality": "MRI",
+      "actualMinutes": 289.72,
+      "targetMinutes": 149.97,
+      "actualHHMM": "04:50",
+      "targetHHMM": "02:30",
+      "tokenCount": 2087
+    },
+    {
+      "modality": "RC",
+      "actualMinutes": 16.79,
+      "targetMinutes": null,
+      "actualHHMM": "00:17",
+      "targetHHMM": "00:00",
+      "tokenCount": 20
+    },
+    {
+      "modality": "RE",
+      "actualMinutes": 22.63,
+      "targetMinutes": null,
+      "actualHHMM": "00:23",
+      "targetHHMM": "00:00",
+      "tokenCount": 15
+    },
+    {
+      "modality": "Ultrasound",
+      "actualMinutes": 140.17,
+      "targetMinutes": 90.01,
+      "actualHHMM": "02:20",
+      "targetHHMM": "01:30",
+      "tokenCount": 2742
+    },
+    {
+      "modality": "XRAY",
+      "actualMinutes": 115.77,
+      "targetMinutes": 60.0,
+      "actualHHMM": "01:56",
+      "targetHHMM": "01:00",
+      "tokenCount": 2001
+    }
+  ]
+}
