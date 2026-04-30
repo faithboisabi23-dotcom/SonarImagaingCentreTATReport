@@ -18,6 +18,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         header {
@@ -124,6 +125,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
         }
 
         .card:hover {
@@ -240,6 +242,12 @@
         #scorecards {
             width: 100%;
             overflow: hidden;
+        }
+
+        .js-plotly-plot,
+        .plot-container {
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         /* Mobile Responsive Styles */
@@ -1170,9 +1178,25 @@
             return { tickvals: vals, ticktext: vals.map(minutesToHHMM) };
         }
 
+        function getViewportWidth() {
+            return window.innerWidth || document.documentElement.clientWidth || 1200;
+        }
+
+        function isMobileView() {
+            return getViewportWidth() <= 768;
+        }
+
         function renderScorecards() {
             // Get filtered scorecard data based on date range
             var s = getFilteredScorecardSummary();
+            var viewportWidth = getViewportWidth();
+            var grid = { cols: 4, rows: 2, gapX: 0.05, gapY: 0.15, height: 350, titleSize: 14, numberSize: 66, margin: { l: 20, r: 20, t: 20, b: 10 } };
+            if (viewportWidth <= 540) {
+                grid = { cols: 1, rows: 8, gapX: 0.02, gapY: 0.05, height: 1040, titleSize: 14, numberSize: 46, margin: { l: 12, r: 12, t: 12, b: 12 } };
+            } else if (viewportWidth <= 920) {
+                grid = { cols: 2, rows: 4, gapX: 0.06, gapY: 0.07, height: 620, titleSize: 13, numberSize: 48, margin: { l: 14, r: 14, t: 16, b: 12 } };
+            }
+
             var values = [
                 s.totalTokens || 0,
                 s.completedTokens || 0,
@@ -1192,19 +1216,24 @@
                     type: "indicator",
                     mode: "number",
                     value: values[i],
-                    title: { text: label },
-                    number: i === 7 ? { suffix: "%", valueformat: ".1f" } : { valueformat: ",.0f" }
+                    title: { text: label, font: { size: grid.titleSize } },
+                    number: i === 7 ? { suffix: "%", valueformat: ".1f", font: { size: grid.numberSize } } : { valueformat: ",.0f", font: { size: grid.numberSize } }
                 };
             });
-            data[0].domain = { x: [0.00, 0.2125], y: [0.575, 1.0] };
-            data[1].domain = { x: [0.2625, 0.475], y: [0.575, 1.0] };
-            data[2].domain = { x: [0.525, 0.7375], y: [0.575, 1.0] };
-            data[3].domain = { x: [0.7875, 1.0], y: [0.575, 1.0] };
-            data[4].domain = { x: [0.00, 0.2125], y: [0.0, 0.425] };
-            data[5].domain = { x: [0.2625, 0.475], y: [0.0, 0.425] };
-            data[6].domain = { x: [0.525, 0.7375], y: [0.0, 0.425] };
-            data[7].domain = { x: [0.7875, 1.0], y: [0.0, 0.425] };
-            Plotly.react("scorecards", data, { margin: { l: 20, r: 20, t: 20, b: 10 }, height: 350 }, { displayModeBar: false, responsive: true });
+
+            var cellWidth = (1 - (grid.gapX * (grid.cols - 1))) / grid.cols;
+            var cellHeight = (1 - (grid.gapY * (grid.rows - 1))) / grid.rows;
+            data.forEach(function (trace, i) {
+                var col = i % grid.cols;
+                var row = Math.floor(i / grid.cols);
+                var x0 = col * (cellWidth + grid.gapX);
+                var x1 = x0 + cellWidth;
+                var y1 = 1 - (row * (cellHeight + grid.gapY));
+                var y0 = y1 - cellHeight;
+                trace.domain = { x: [x0, x1], y: [y0, y1] };
+            });
+
+            Plotly.react("scorecards", data, { margin: grid.margin, height: grid.height }, { displayModeBar: false, responsive: true });
             setText("scorecards-summary", "Intake volume is high with a completion rate of " + (s.completionRate || 0).toFixed(1) + "%.");
             setText("dashboardTitle", "TAT & Token Workflow Report");
             document.title = "TAT & Token Workflow Report";
@@ -1260,14 +1289,23 @@
         function renderModalityStatus() {
             // Get filtered modality status data based on date range
             var m = getFilteredModalityStatus();
+            var mobile = isMobileView();
             var chart = {
                 data: [
                     { type: "bar", name: "Complete", x: m.categories || [], y: m.completed || [], marker: { color: "#2ca02c" } },
                     { type: "bar", name: "Non-completed (incl. E-Complete)", x: m.categories || [], y: m.nonCompleted || [], marker: { color: "#d62728" } }
                 ],
-                layout: { margin: { l: 20, r: 20, t: 30, b: 20 }, barmode: "group", height: 360, title: { text: "<b>Complete vs Non-completed Tokens by Modality</b>" } }
+                layout: {
+                    margin: mobile ? { l: 40, r: 10, t: 48, b: 58 } : { l: 20, r: 20, t: 30, b: 20 },
+                    barmode: "group",
+                    height: mobile ? 400 : 360,
+                    title: { text: "<b>Complete vs Non-completed Tokens by Modality</b>", x: 0.5, xanchor: "center", font: { size: mobile ? 16 : 22 } },
+                    legend: mobile ? { orientation: "h", y: 1.02, x: 0.5, xanchor: "center" } : undefined,
+                    xaxis: mobile ? { tickangle: -45, automargin: true } : { automargin: true },
+                    yaxis: { automargin: true }
+                }
             };
-            Plotly.react("modality_status", chart.data, chart.layout, { displayModeBar: false });
+            Plotly.react("modality_status", chart.data, chart.layout, { displayModeBar: false, responsive: true });
         }
 
         function getFilteredModalityStatus() {
@@ -1317,6 +1355,7 @@
         }
 
         function renderTatVsTarget() {
+            var mobile = isMobileView();
             var byModality = {};
             (dashboardData.dailyTrends.modalities || []).forEach(function (m) {
                 var filtered = filterPoints(m.points || []);
@@ -1345,18 +1384,21 @@
                     { type: "bar", name: "Target TAT", x: categories, y: target, text: targetLabels, customdata: targetLabels, textposition: "outside", marker: { color: "#00cc96" }, hovertemplate: "%{x}: %{customdata}<extra></extra>" }
                 ],
                 layout: {
-                    margin: { l: 20, r: 20, t: 30, b: 20 },
+                    margin: mobile ? { l: 40, r: 10, t: 48, b: 58 } : { l: 20, r: 20, t: 30, b: 20 },
                     barmode: "group",
-                    height: 360,
-                    title: { text: "<b>Average TAT vs Target by Modality</b>" },
-                    yaxis: { title: { text: "TAT (HH:MM)" }, tickvals: ticks.tickvals, ticktext: ticks.ticktext }
+                    height: mobile ? 400 : 360,
+                    title: { text: "<b>Average TAT vs Target by Modality</b>", x: 0.5, xanchor: "center", font: { size: mobile ? 16 : 22 } },
+                    legend: mobile ? { orientation: "h", y: 1.02, x: 0.5, xanchor: "center" } : undefined,
+                    xaxis: mobile ? { tickangle: -30, automargin: true } : { automargin: true },
+                    yaxis: { title: { text: "TAT (HH:MM)" }, tickvals: ticks.tickvals, ticktext: ticks.ticktext, automargin: true }
                 }
             };
-            Plotly.react("tat_vs_target", chart.data, chart.layout, { displayModeBar: false });
+            Plotly.react("tat_vs_target", chart.data, chart.layout, { displayModeBar: false, responsive: true });
         }
 
         function renderTrend(modalityName) {
             var cfg = modalityConfig[modalityName];
+            var mobile = isMobileView();
             var row = (dashboardData.dailyTrends.modalities || []).find(function (m) { return m.modality === modalityName; });
             var points = filterPoints(row ? row.points : []);
             var x = points.map(function (p) { return p.date + "T00:00:00"; });
@@ -1372,13 +1414,15 @@
                     type: "date",
                     tickformat: "%b %d",
                     tickmode: "linear",
-                    dtick: 24 * 60 * 60 * 1000
+                    dtick: 24 * 60 * 60 * 1000,
+                    tickangle: mobile ? -45 : 0,
+                    automargin: true
                 },
-                yaxis: { title: { text: "Completed tokens" }, range: [0, Math.ceil(maxCompleted * 1.2)] },
-                yaxis2: { overlaying: "y", side: "right", title: { text: "TAT (HH:MM)" }, tickvals: ticks.tickvals, ticktext: ticks.ticktext },
-                margin: { l: 10, r: 10, t: 40, b: 30 },
-                legend: { font: { size: 10 }, orientation: "h", yanchor: "bottom", y: 1.02, xanchor: "center", x: 0.5 },
-                height: 360,
+                yaxis: { title: { text: "Completed tokens" }, range: [0, Math.ceil(maxCompleted * 1.2)], automargin: true },
+                yaxis2: { overlaying: "y", side: "right", title: { text: "TAT (HH:MM)" }, tickvals: ticks.tickvals, ticktext: ticks.ticktext, automargin: true },
+                margin: mobile ? { l: 34, r: 34, t: 40, b: 62 } : { l: 10, r: 10, t: 40, b: 30 },
+                legend: { font: { size: mobile ? 9 : 10 }, orientation: "h", yanchor: "bottom", y: 1.02, xanchor: "center", x: 0.5 },
+                height: mobile ? 390 : 360,
                 title: { text: "" }
             };
 
@@ -1387,7 +1431,7 @@
                 { type: "scatter", mode: "lines+markers", name: "Avg Actual TAT", x: x, y: actual, yaxis: "y2", line: { color: "#d62728", width: 2 }, customdata: actual.map(minutesToHHMM), hovertemplate: "%{x|%b %d}: %{customdata}<extra></extra>" },
                 { type: "scatter", mode: "lines", name: "Target TAT", x: x, y: target, yaxis: "y2", line: { color: "#2ca02c", width: 2 }, customdata: target.map(minutesToHHMM), hovertemplate: "%{x|%b %d}: %{customdata}<extra></extra>" }
             ];
-            Plotly.react(cfg.trendId, data, layout, { displayModeBar: false });
+            Plotly.react(cfg.trendId, data, layout, { displayModeBar: false, responsive: true });
         }
 
         function getFilteredProcessBreakdown(modalityName) {
@@ -1464,9 +1508,10 @@
 
         function renderDistribution(modalityName) {
             var cfg = modalityConfig[modalityName];
+            var mobile = isMobileView();
             var row = getFilteredProcessBreakdown(modalityName);
             if (!row) {
-                Plotly.react(cfg.distId, [{ type: "pie", labels: ["No data"], values: [1], hole: 0.55, marker: { colors: ["#cbd5e1"] }, textinfo: "label" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: 220 }, { displayModeBar: false });
+                Plotly.react(cfg.distId, [{ type: "pie", labels: ["No data"], values: [1], hole: 0.55, marker: { colors: ["#cbd5e1"] }, textinfo: "label" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: mobile ? 260 : 220 }, { displayModeBar: false, responsive: true });
                 setText(cfg.key + "-billing-time", "--");
                 setText(cfg.key + "-billing-pct", "--");
                 setText(cfg.key + "-service-time", "--");
@@ -1477,7 +1522,7 @@
             }
             var labels = ["Billing " + row.billingHHMM, "Service " + row.serviceHHMM, "Dispatch " + row.dispatchHHMM];
             var values = [row.billingPct || 0, row.servicePct || 0, row.dispatchPct || 0];
-            Plotly.react(cfg.distId, [{ type: "pie", hole: 0.55, labels: labels, values: values, marker: { colors: ["#d62728", "#2ca02c", "#1f77b4"] }, textinfo: "percent", textposition: "inside" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: 220, title: { text: "" } }, { displayModeBar: false });
+            Plotly.react(cfg.distId, [{ type: "pie", hole: 0.55, labels: labels, values: values, marker: { colors: ["#d62728", "#2ca02c", "#1f77b4"] }, textinfo: "percent", textposition: "inside" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: mobile ? 260 : 220, title: { text: "" } }, { displayModeBar: false, responsive: true });
 
             setText(cfg.key + "-billing-time", row.billingHHMM || "00:00");
             setText(cfg.key + "-billing-pct", ((row.billingPct || 0).toFixed(2)) + "%");
@@ -1489,6 +1534,7 @@
 
         function renderBreakdown(modalityName, isBilling) {
             var cfg = modalityConfig[modalityName];
+            var mobile = isMobileView();
             var row = getFilteredProcessBreakdown(modalityName);
             var breakdown = row ? (isBilling ? row.billingBreakdown : row.serviceBreakdown) : null;
             var chartId = isBilling ? cfg.billId : cfg.svcId;
@@ -1496,7 +1542,7 @@
 
             var hasData = breakdown && (breakdown.waitMinutes > 0 || breakdown.serviceMinutes > 0 || breakdown.holdMinutes > 0);
             if (!hasData) {
-                Plotly.react(chartId, [{ type: "pie", hole: 0.55, labels: ["Not available"], values: [1], marker: { colors: ["#cbd5e1"] }, textinfo: "label" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: 200 }, { displayModeBar: false });
+                Plotly.react(chartId, [{ type: "pie", hole: 0.55, labels: ["Not available"], values: [1], marker: { colors: ["#cbd5e1"] }, textinfo: "label" }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: mobile ? 230 : 200 }, { displayModeBar: false, responsive: true });
                 if (isBilling) {
                     setText(keyPrefix + "-bill-wait-time", "--");
                     setText(keyPrefix + "-bill-wait-pct", "--");
@@ -1527,7 +1573,7 @@
                 marker: { colors: ["#f59e0b", "#2ca02c", "#636efa"] },
                 textinfo: "percent",
                 textposition: "inside"
-            }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: 200 }, { displayModeBar: false });
+            }], { margin: { l: 8, r: 8, t: 10, b: 8 }, height: mobile ? 230 : 200 }, { displayModeBar: false, responsive: true });
 
             if (isBilling) {
                 setText(keyPrefix + "-bill-wait-time", minutesToHHMM(breakdown.waitMinutes));
@@ -1723,7 +1769,7 @@
         }
 
         ["combo_xray","combo_mri","combo_ct","combo_us","tat_dist_xray","tat_dist_mri","tat_dist_ct","tat_dist_us","xray_service_breakdown","mri_service_breakdown","ct_service_breakdown","us_service_breakdown","xray_billing_breakdown","mri_billing_breakdown","ct_billing_breakdown","us_billing_breakdown","modality_status","tat_vs_target","scorecards"].forEach(function (id) {
-            Plotly.newPlot(id, [], {}, { displayModeBar: false });
+            Plotly.newPlot(id, [], {}, { displayModeBar: false, responsive: true });
         });
 
         loadDashboardData().then(function (data) {
@@ -1737,7 +1783,7 @@
         });
 
         window.addEventListener("resize", function () {
-            if (dashboardData) renderScorecards();
+            if (dashboardData) renderAll();
         });
     </script>
 </body>
