@@ -3,8 +3,8 @@ param(
     [int]$PollSeconds = 2
 )
 
-$allTokensPath = Join-Path $WorkspaceRoot "data\input\ALL TOKENS STATUS.xlsx"
-$completedTokensPath = Join-Path $WorkspaceRoot "data\input\ALL COMPLETED TOKENS.xlsx"
+$allTokensPath = Join-Path $WorkspaceRoot "data\input\TAT - ALL TOKENS.xlsx"
+$completedTokensPath = Join-Path $WorkspaceRoot "data\input\TAT - ALL COMPLETED TOKENS.xlsx"
 $exporterPath = Join-Path $WorkspaceRoot "scripts\export_dashboard_json.py"
 
 function Get-FileStamp {
@@ -70,10 +70,10 @@ while ($true) {
 
     if ($allTokensChanged -or $completedTokensChanged) {
         if ($allTokensChanged) {
-            Write-Host "Detected change: ALL TOKENS STATUS.xlsx" -ForegroundColor Magenta
+            Write-Host "Detected change: TAT - ALL TOKENS.xlsx" -ForegroundColor Magenta
         }
         if ($completedTokensChanged) {
-            Write-Host "Detected change: ALL COMPLETED TOKENS.xlsx" -ForegroundColor Magenta
+            Write-Host "Detected change: TAT - ALL COMPLETED TOKENS.xlsx" -ForegroundColor Magenta
         }
 
         Run-Export -Root $WorkspaceRoot -Exporter $exporterPath

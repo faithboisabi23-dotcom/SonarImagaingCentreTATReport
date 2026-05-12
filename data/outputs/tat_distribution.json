@@ -2,55 +2,55 @@
   "modalities": [
     {
       "modality": "CT",
-      "billingMinutes": 32.43,
+      "billingMinutes": 32.31,
       "billingHHMM": "00:32",
-      "billingPct": 15.9,
-      "serviceMinutes": 78.91,
-      "serviceHHMM": "01:19",
-      "servicePct": 38.8,
-      "dispatchMinutes": 92.16,
-      "dispatchHHMM": "01:32",
-      "dispatchPct": 45.3,
-      "tokenCount": 1295
+      "billingPct": 15.8,
+      "serviceMinutes": 78.06,
+      "serviceHHMM": "01:18",
+      "servicePct": 38.1,
+      "dispatchMinutes": 94.47,
+      "dispatchHHMM": "01:34",
+      "dispatchPct": 46.1,
+      "tokenCount": 1323
     },
     {
       "modality": "MRI",
-      "billingMinutes": 49.38,
+      "billingMinutes": 49.04,
       "billingHHMM": "00:49",
-      "billingPct": 16.3,
-      "serviceMinutes": 131.24,
+      "billingPct": 16.1,
+      "serviceMinutes": 131.19,
       "serviceHHMM": "02:11",
-      "servicePct": 43.3,
-      "dispatchMinutes": 122.17,
-      "dispatchHHMM": "02:02",
-      "dispatchPct": 40.3,
-      "tokenCount": 2087
+      "servicePct": 43.1,
+      "dispatchMinutes": 123.97,
+      "dispatchHHMM": "02:04",
+      "dispatchPct": 40.8,
+      "tokenCount": 2196
     },
     {
       "modality": "Ultrasound",
-      "billingMinutes": 24.49,
+      "billingMinutes": 24.35,
       "billingHHMM": "00:24",
       "billingPct": 16.4,
-      "serviceMinutes": 86.53,
-      "serviceHHMM": "01:27",
-      "servicePct": 58.1,
-      "dispatchMinutes": 37.97,
+      "serviceMinutes": 85.82,
+      "serviceHHMM": "01:26",
+      "servicePct": 57.8,
+      "dispatchMinutes": 38.27,
       "dispatchHHMM": "00:38",
-      "dispatchPct": 25.5,
-      "tokenCount": 2742
+      "dispatchPct": 25.8,
+      "tokenCount": 2896
     },
     {
       "modality": "XRAY",
-      "billingMinutes": 21.88,
+      "billingMinutes": 21.74,
       "billingHHMM": "00:22",
-      "billingPct": 17.6,
-      "serviceMinutes": 35.13,
-      "serviceHHMM": "00:35",
-      "servicePct": 28.2,
-      "dispatchMinutes": 67.61,
-      "dispatchHHMM": "01:08",
-      "dispatchPct": 54.3,
-      "tokenCount": 2001
+      "billingPct": 17.5,
+      "serviceMinutes": 36.24,
+      "serviceHHMM": "00:36",
+      "servicePct": 29.2,
+      "dispatchMinutes": 66.04,
+      "dispatchHHMM": "01:06",
+      "dispatchPct": 53.3,
+      "tokenCount": 2122
     }
   ]
 }
