@@ -14,36 +14,36 @@
   "completed": [
     17,
     1,
-    1323,
-    20,
-    79,
-    2196,
-    20,
-    15,
-    2897,
-    2122
+    1379,
+    22,
+    81,
+    2357,
+    21,
+    17,
+    3068,
+    2285
   ],
   "nonCompleted": [
-    16,
+    18,
     0,
-    789,
-    8,
-    119,
-    2411,
-    2,
+    882,
+    10,
+    129,
+    2611,
     3,
-    578,
-    557
+    3,
+    651,
+    614
   ],
   "modalities": [
     {
       "modality": "AM",
       "completed": 17,
-      "nonCompleted": 16,
+      "nonCompleted": 18,
       "statusBreakdown": {
         "complete": 17,
         "e_complete": 6,
-        "pending": 3,
+        "pending": 5,
         "standby": 7
       }
     },
@@ -57,96 +57,96 @@
     },
     {
       "modality": "CT",
-      "completed": 1323,
-      "nonCompleted": 789,
+      "completed": 1379,
+      "nonCompleted": 882,
       "statusBreakdown": {
-        "complete": 1323,
-        "e_complete": 209,
-        "noshow": 45,
-        "pending": 272,
-        "serving": 13,
-        "standby": 250
+        "complete": 1379,
+        "e_complete": 223,
+        "noshow": 49,
+        "pending": 326,
+        "serving": 14,
+        "standby": 270
       }
     },
     {
       "modality": "EQ",
-      "completed": 20,
-      "nonCompleted": 8,
+      "completed": 22,
+      "nonCompleted": 10,
       "statusBreakdown": {
-        "complete": 20,
+        "complete": 22,
         "e_complete": 4,
-        "noshow": 1,
-        "standby": 3
+        "noshow": 2,
+        "standby": 4
       }
     },
     {
       "modality": "LB",
-      "completed": 79,
-      "nonCompleted": 119,
+      "completed": 81,
+      "nonCompleted": 129,
       "statusBreakdown": {
-        "complete": 79,
-        "e_complete": 7,
+        "complete": 81,
+        "e_complete": 10,
         "noshow": 3,
-        "pending": 79,
-        "standby": 30
+        "pending": 84,
+        "standby": 32
       }
     },
     {
       "modality": "MRI",
-      "completed": 2196,
-      "nonCompleted": 2411,
+      "completed": 2357,
+      "nonCompleted": 2611,
       "statusBreakdown": {
-        "complete": 2196,
-        "e_complete": 555,
-        "noshow": 117,
-        "pending": 1075,
-        "serving": 24,
-        "standby": 640
+        "complete": 2357,
+        "e_complete": 584,
+        "noshow": 120,
+        "pending": 1180,
+        "serving": 26,
+        "standby": 701
       }
     },
     {
       "modality": "RC",
-      "completed": 20,
-      "nonCompleted": 2,
+      "completed": 21,
+      "nonCompleted": 3,
       "statusBreakdown": {
-        "complete": 20,
+        "complete": 21,
         "e_complete": 1,
-        "standby": 1
+        "standby": 2
       }
     },
     {
       "modality": "RE",
-      "completed": 15,
+      "completed": 17,
       "nonCompleted": 3,
       "statusBreakdown": {
-        "complete": 15,
+        "complete": 17,
         "e_complete": 3
       }
     },
     {
       "modality": "Ultrasound",
-      "completed": 2897,
-      "nonCompleted": 578,
+      "completed": 3068,
+      "nonCompleted": 651,
       "statusBreakdown": {
-        "complete": 2897,
-        "e_complete": 185,
-        "noshow": 40,
-        "pending": 147,
-        "serving": 25,
-        "standby": 181
+        "complete": 3068,
+        "e_complete": 197,
+        "noshow": 44,
+        "pending": 184,
+        "serving": 28,
+        "standby": 198
       }
     },
     {
       "modality": "XRAY",
-      "completed": 2122,
-      "nonCompleted": 557,
+      "completed": 2285,
+      "nonCompleted": 614,
       "statusBreakdown": {
-        "complete": 2122,
-        "e_complete": 159,
-        "noshow": 41,
-        "pending": 157,
+        "complete": 2285,
+        "e_complete": 167,
+        "noshow": 45,
+        "pending": 182,
         "serving": 32,
-        "standby": 168
+        "standby": 188
       }
     }
   ]
