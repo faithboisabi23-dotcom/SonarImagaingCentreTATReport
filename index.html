@@ -563,7 +563,7 @@
                 <button id="applyDateFilter" type="button">Apply</button>
                 <button id="clearDateFilter" type="button">Reset</button>
             </div>
-            <div id="visitorCounter" aria-live="polite">Link opens: loading...</div>
+            <div id="visitorCounter" aria-live="polite">Today's unique visits: loading...</div>
         </div>
         <img src="SONAR%20LOGO%202024%20%281%291%20%281%29.png" alt="Sonar Imaging Centre" />
     </header>
@@ -1161,8 +1161,20 @@
             if (!counterEl) return;
 
             var namespace = "faithboisabi23-dotcom";
-            var key = "sonarimagingcentre-tat-report-opens";
-            var url = "https://api.countapi.xyz/hit/" + namespace + "/" + key;
+            var today = new Date().toISOString().slice(0, 10);
+            var key = "sonarimagingcentre-tat-report-unique-" + today;
+            var storageKey = "sonar_tat_unique_visit_" + today;
+            var isFirstVisitToday = false;
+
+            try {
+                isFirstVisitToday = localStorage.getItem(storageKey) !== "1";
+            } catch (storageErr) {
+                // If storage is blocked, fall back to counting this load.
+                isFirstVisitToday = true;
+            }
+
+            var endpoint = isFirstVisitToday ? "hit" : "get";
+            var url = "https://api.countapi.xyz/" + endpoint + "/" + namespace + "/" + key;
 
             try {
                 var res = await fetch(url, { cache: "no-store" });
@@ -1170,10 +1182,19 @@
                 var payload = await res.json();
                 var count = Number(payload && payload.value);
                 if (Number.isNaN(count)) throw new Error("Invalid counter value");
-                counterEl.textContent = "Link opens: " + count.toLocaleString();
+
+                if (isFirstVisitToday) {
+                    try {
+                        localStorage.setItem(storageKey, "1");
+                    } catch (setErr) {
+                        // Ignore storage write errors.
+                    }
+                }
+
+                counterEl.textContent = "Today's unique visits: " + count.toLocaleString();
             } catch (err) {
                 console.warn("Unable to update visitor counter", err);
-                counterEl.textContent = "Link opens: unavailable";
+                counterEl.textContent = "Today's unique visits: unavailable";
             }
         }
 
