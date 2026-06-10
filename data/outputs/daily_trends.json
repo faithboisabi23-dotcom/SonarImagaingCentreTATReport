@@ -1391,6 +1391,86 @@
           "actualHHMM": "01:52",
           "targetMinutes": 120.0,
           "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-05-28",
+          "tokens": 6,
+          "actualMinutes": 168.6,
+          "actualHHMM": "02:49",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-05-29",
+          "tokens": 7,
+          "actualMinutes": 214.09,
+          "actualHHMM": "03:34",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-05-30",
+          "tokens": 4,
+          "actualMinutes": 87.78,
+          "actualHHMM": "01:28",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-02",
+          "tokens": 7,
+          "actualMinutes": 231.63,
+          "actualHHMM": "03:52",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 11,
+          "actualMinutes": 207.9,
+          "actualHHMM": "03:28",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-04",
+          "tokens": 18,
+          "actualMinutes": 221.8,
+          "actualHHMM": "03:42",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-05",
+          "tokens": 7,
+          "actualMinutes": 263.85,
+          "actualHHMM": "04:24",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-06",
+          "tokens": 4,
+          "actualMinutes": 133.97,
+          "actualHHMM": "02:14",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-08",
+          "tokens": 8,
+          "actualMinutes": 105.19,
+          "actualHHMM": "01:45",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 10,
+          "actualMinutes": 191.39,
+          "actualHHMM": "03:11",
+          "targetMinutes": 120.0,
+          "targetHHMM": "02:00"
         }
       ]
     },
@@ -1554,6 +1634,30 @@
           "tokens": 1,
           "actualMinutes": 805.72,
           "actualHHMM": "13:26",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 1,
+          "actualMinutes": 465.58,
+          "actualHHMM": "07:46",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-06",
+          "tokens": 1,
+          "actualMinutes": 32.83,
+          "actualHHMM": "00:33",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 1,
+          "actualMinutes": 16.05,
+          "actualHHMM": "00:16",
           "targetMinutes": null,
           "targetHHMM": "00:00"
         }
@@ -1991,6 +2095,46 @@
           "tokens": 1,
           "actualMinutes": 9.53,
           "actualHHMM": "00:10",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 1,
+          "actualMinutes": 6.85,
+          "actualHHMM": "00:07",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-04",
+          "tokens": 1,
+          "actualMinutes": 52.78,
+          "actualHHMM": "00:53",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-05",
+          "tokens": 1,
+          "actualMinutes": 40.6,
+          "actualHHMM": "00:41",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-08",
+          "tokens": 1,
+          "actualMinutes": 6.03,
+          "actualHHMM": "00:06",
+          "targetMinutes": null,
+          "targetHHMM": "00:00"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 1,
+          "actualMinutes": 27.83,
+          "actualHHMM": "00:28",
           "targetMinutes": null,
           "targetHHMM": "00:00"
         }
@@ -3372,6 +3516,94 @@
           "tokens": 4,
           "actualMinutes": 121.93,
           "actualHHMM": "02:02",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-05-28",
+          "tokens": 12,
+          "actualMinutes": 242.62,
+          "actualHHMM": "04:03",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-05-29",
+          "tokens": 13,
+          "actualMinutes": 214.8,
+          "actualHHMM": "03:35",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-05-30",
+          "tokens": 7,
+          "actualMinutes": 172.91,
+          "actualHHMM": "02:53",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-01",
+          "tokens": 1,
+          "actualMinutes": 192.53,
+          "actualHHMM": "03:13",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-02",
+          "tokens": 8,
+          "actualMinutes": 237.97,
+          "actualHHMM": "03:58",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 12,
+          "actualMinutes": 486.59,
+          "actualHHMM": "08:07",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-04",
+          "tokens": 13,
+          "actualMinutes": 533.76,
+          "actualHHMM": "08:54",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-05",
+          "tokens": 18,
+          "actualMinutes": 430.13,
+          "actualHHMM": "07:10",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-06",
+          "tokens": 9,
+          "actualMinutes": 269.43,
+          "actualHHMM": "04:29",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-08",
+          "tokens": 15,
+          "actualMinutes": 292.55,
+          "actualHHMM": "04:53",
+          "targetMinutes": 150.0,
+          "targetHHMM": "02:30"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 6,
+          "actualMinutes": 428.61,
+          "actualHHMM": "07:09",
           "targetMinutes": 150.0,
           "targetHHMM": "02:30"
         }
@@ -5013,6 +5245,94 @@
           "actualHHMM": "01:09",
           "targetMinutes": 90.0,
           "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-05-28",
+          "tokens": 24,
+          "actualMinutes": 132.48,
+          "actualHHMM": "02:12",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-05-29",
+          "tokens": 12,
+          "actualMinutes": 174.83,
+          "actualHHMM": "02:55",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-05-30",
+          "tokens": 2,
+          "actualMinutes": 50.44,
+          "actualHHMM": "00:50",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-01",
+          "tokens": 3,
+          "actualMinutes": 184.62,
+          "actualHHMM": "03:05",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-02",
+          "tokens": 8,
+          "actualMinutes": 164.14,
+          "actualHHMM": "02:44",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 15,
+          "actualMinutes": 140.66,
+          "actualHHMM": "02:21",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-04",
+          "tokens": 8,
+          "actualMinutes": 218.6,
+          "actualHHMM": "03:39",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-05",
+          "tokens": 6,
+          "actualMinutes": 201.54,
+          "actualHHMM": "03:22",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-06",
+          "tokens": 8,
+          "actualMinutes": 154.58,
+          "actualHHMM": "02:35",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-08",
+          "tokens": 10,
+          "actualMinutes": 137.42,
+          "actualHHMM": "02:17",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 17,
+          "actualMinutes": 193.14,
+          "actualHHMM": "03:13",
+          "targetMinutes": 90.0,
+          "targetHHMM": "01:30"
         }
       ]
     },
@@ -6384,6 +6704,94 @@
           "tokens": 6,
           "actualMinutes": 78.66,
           "actualHHMM": "01:19",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-05-28",
+          "tokens": 8,
+          "actualMinutes": 70.55,
+          "actualHHMM": "01:11",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-05-29",
+          "tokens": 15,
+          "actualMinutes": 110.75,
+          "actualHHMM": "01:51",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-05-30",
+          "tokens": 8,
+          "actualMinutes": 120.94,
+          "actualHHMM": "02:01",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-01",
+          "tokens": 1,
+          "actualMinutes": 89.95,
+          "actualHHMM": "01:30",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-02",
+          "tokens": 17,
+          "actualMinutes": 119.51,
+          "actualHHMM": "02:00",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-03",
+          "tokens": 12,
+          "actualMinutes": 103.39,
+          "actualHHMM": "01:43",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-04",
+          "tokens": 20,
+          "actualMinutes": 110.12,
+          "actualHHMM": "01:50",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-05",
+          "tokens": 13,
+          "actualMinutes": 108.06,
+          "actualHHMM": "01:48",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-06",
+          "tokens": 9,
+          "actualMinutes": 63.85,
+          "actualHHMM": "01:04",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-08",
+          "tokens": 23,
+          "actualMinutes": 104.11,
+          "actualHHMM": "01:44",
+          "targetMinutes": 60.0,
+          "targetHHMM": "01:00"
+        },
+        {
+          "date": "2026-06-09",
+          "tokens": 17,
+          "actualMinutes": 130.05,
+          "actualHHMM": "02:10",
           "targetMinutes": 60.0,
           "targetHHMM": "01:00"
         }

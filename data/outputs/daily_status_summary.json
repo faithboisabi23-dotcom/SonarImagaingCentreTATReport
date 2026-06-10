@@ -3095,6 +3095,202 @@
       "noShowTokens": 0,
       "standbyTokens": 7,
       "completionRate": 42.1
+    },
+    {
+      "date": "2026-05-28",
+      "totalTokens": 80,
+      "statusCounts": {
+        "Complete": 50,
+        "E-Complete": 5,
+        "Noshow": 1,
+        "Pending": 15,
+        "Standby": 9
+      },
+      "completedTokens": 50,
+      "eCompleteTokens": 5,
+      "pendingTokens": 15,
+      "servingTokens": 0,
+      "noShowTokens": 1,
+      "standbyTokens": 9,
+      "completionRate": 62.5
+    },
+    {
+      "date": "2026-05-29",
+      "totalTokens": 76,
+      "statusCounts": {
+        "Complete": 47,
+        "E-Complete": 6,
+        "Pending": 11,
+        "Serving": 1,
+        "Standby": 11
+      },
+      "completedTokens": 47,
+      "eCompleteTokens": 6,
+      "pendingTokens": 11,
+      "servingTokens": 1,
+      "noShowTokens": 0,
+      "standbyTokens": 11,
+      "completionRate": 61.8
+    },
+    {
+      "date": "2026-05-30",
+      "totalTokens": 50,
+      "statusCounts": {
+        "Complete": 21,
+        "E-Complete": 5,
+        "Noshow": 2,
+        "Pending": 18,
+        "Standby": 4
+      },
+      "completedTokens": 21,
+      "eCompleteTokens": 5,
+      "pendingTokens": 18,
+      "servingTokens": 0,
+      "noShowTokens": 2,
+      "standbyTokens": 4,
+      "completionRate": 42.0
+    },
+    {
+      "date": "2026-06-01",
+      "totalTokens": 11,
+      "statusCounts": {
+        "Complete": 5,
+        "Pending": 4,
+        "Serving": 2
+      },
+      "completedTokens": 5,
+      "eCompleteTokens": 0,
+      "pendingTokens": 4,
+      "servingTokens": 2,
+      "noShowTokens": 0,
+      "standbyTokens": 0,
+      "completionRate": 45.5
+    },
+    {
+      "date": "2026-06-02",
+      "totalTokens": 100,
+      "statusCounts": {
+        "Complete": 40,
+        "E-Complete": 2,
+        "Noshow": 2,
+        "Pending": 33,
+        "Standby": 23
+      },
+      "completedTokens": 40,
+      "eCompleteTokens": 2,
+      "pendingTokens": 33,
+      "servingTokens": 0,
+      "noShowTokens": 2,
+      "standbyTokens": 23,
+      "completionRate": 40.0
+    },
+    {
+      "date": "2026-06-03",
+      "totalTokens": 90,
+      "statusCounts": {
+        "Complete": 52,
+        "E-Complete": 3,
+        "Noshow": 5,
+        "Pending": 14,
+        "Standby": 16
+      },
+      "completedTokens": 52,
+      "eCompleteTokens": 3,
+      "pendingTokens": 14,
+      "servingTokens": 0,
+      "noShowTokens": 5,
+      "standbyTokens": 16,
+      "completionRate": 57.8
+    },
+    {
+      "date": "2026-06-04",
+      "totalTokens": 106,
+      "statusCounts": {
+        "Complete": 60,
+        "E-Complete": 14,
+        "Noshow": 4,
+        "Pending": 17,
+        "Standby": 11
+      },
+      "completedTokens": 60,
+      "eCompleteTokens": 14,
+      "pendingTokens": 17,
+      "servingTokens": 0,
+      "noShowTokens": 4,
+      "standbyTokens": 11,
+      "completionRate": 56.6
+    },
+    {
+      "date": "2026-06-05",
+      "totalTokens": 77,
+      "statusCounts": {
+        "Complete": 45,
+        "E-Complete": 5,
+        "Noshow": 3,
+        "Pending": 11,
+        "Serving": 1,
+        "Standby": 12
+      },
+      "completedTokens": 45,
+      "eCompleteTokens": 5,
+      "pendingTokens": 11,
+      "servingTokens": 1,
+      "noShowTokens": 3,
+      "standbyTokens": 12,
+      "completionRate": 58.4
+    },
+    {
+      "date": "2026-06-06",
+      "totalTokens": 44,
+      "statusCounts": {
+        "Complete": 31,
+        "Pending": 8,
+        "Standby": 5
+      },
+      "completedTokens": 31,
+      "eCompleteTokens": 0,
+      "pendingTokens": 8,
+      "servingTokens": 0,
+      "noShowTokens": 0,
+      "standbyTokens": 5,
+      "completionRate": 70.5
+    },
+    {
+      "date": "2026-06-08",
+      "totalTokens": 109,
+      "statusCounts": {
+        "Complete": 57,
+        "E-Complete": 9,
+        "Noshow": 1,
+        "Pending": 25,
+        "Serving": 2,
+        "Standby": 15
+      },
+      "completedTokens": 57,
+      "eCompleteTokens": 9,
+      "pendingTokens": 25,
+      "servingTokens": 2,
+      "noShowTokens": 1,
+      "standbyTokens": 15,
+      "completionRate": 52.3
+    },
+    {
+      "date": "2026-06-09",
+      "totalTokens": 111,
+      "statusCounts": {
+        "Complete": 52,
+        "E-Complete": 7,
+        "Noshow": 8,
+        "Pending": 33,
+        "Standby": 11
+      },
+      "completedTokens": 52,
+      "eCompleteTokens": 7,
+      "pendingTokens": 33,
+      "servingTokens": 0,
+      "noShowTokens": 8,
+      "standbyTokens": 11,
+      "completionRate": 46.8
     }
   ],
   "dailyModality": {
@@ -7014,6 +7210,252 @@
       "XRAY": {
         "completed": 6,
         "nonCompleted": 2
+      }
+    },
+    "2026-05-28": {
+      "CT": {
+        "completed": 6,
+        "nonCompleted": 5
+      },
+      "LB": {
+        "completed": 0,
+        "nonCompleted": 1
+      },
+      "MRI": {
+        "completed": 12,
+        "nonCompleted": 16
+      },
+      "Ultrasound": {
+        "completed": 24,
+        "nonCompleted": 4
+      },
+      "XRAY": {
+        "completed": 8,
+        "nonCompleted": 4
+      }
+    },
+    "2026-05-29": {
+      "CT": {
+        "completed": 7,
+        "nonCompleted": 9
+      },
+      "MRI": {
+        "completed": 13,
+        "nonCompleted": 8
+      },
+      "Ultrasound": {
+        "completed": 12,
+        "nonCompleted": 5
+      },
+      "XRAY": {
+        "completed": 15,
+        "nonCompleted": 7
+      }
+    },
+    "2026-05-30": {
+      "CT": {
+        "completed": 4,
+        "nonCompleted": 5
+      },
+      "MRI": {
+        "completed": 7,
+        "nonCompleted": 11
+      },
+      "Ultrasound": {
+        "completed": 2,
+        "nonCompleted": 9
+      },
+      "XRAY": {
+        "completed": 8,
+        "nonCompleted": 4
+      }
+    },
+    "2026-06-01": {
+      "CT": {
+        "completed": 0,
+        "nonCompleted": 2
+      },
+      "MRI": {
+        "completed": 1,
+        "nonCompleted": 3
+      },
+      "Ultrasound": {
+        "completed": 3,
+        "nonCompleted": 1
+      },
+      "XRAY": {
+        "completed": 1,
+        "nonCompleted": 0
+      }
+    },
+    "2026-06-02": {
+      "CT": {
+        "completed": 7,
+        "nonCompleted": 9
+      },
+      "MRI": {
+        "completed": 8,
+        "nonCompleted": 30
+      },
+      "Ultrasound": {
+        "completed": 8,
+        "nonCompleted": 16
+      },
+      "XRAY": {
+        "completed": 17,
+        "nonCompleted": 5
+      }
+    },
+    "2026-06-03": {
+      "CT": {
+        "completed": 11,
+        "nonCompleted": 2
+      },
+      "EQ": {
+        "completed": 1,
+        "nonCompleted": 0
+      },
+      "LB": {
+        "completed": 1,
+        "nonCompleted": 1
+      },
+      "MRI": {
+        "completed": 12,
+        "nonCompleted": 26
+      },
+      "Ultrasound": {
+        "completed": 15,
+        "nonCompleted": 7
+      },
+      "XRAY": {
+        "completed": 12,
+        "nonCompleted": 2
+      }
+    },
+    "2026-06-04": {
+      "CT": {
+        "completed": 18,
+        "nonCompleted": 6
+      },
+      "LB": {
+        "completed": 1,
+        "nonCompleted": 1
+      },
+      "MRI": {
+        "completed": 13,
+        "nonCompleted": 28
+      },
+      "Ultrasound": {
+        "completed": 8,
+        "nonCompleted": 9
+      },
+      "XRAY": {
+        "completed": 20,
+        "nonCompleted": 2
+      }
+    },
+    "2026-06-05": {
+      "CT": {
+        "completed": 7,
+        "nonCompleted": 6
+      },
+      "LB": {
+        "completed": 1,
+        "nonCompleted": 0
+      },
+      "MRI": {
+        "completed": 18,
+        "nonCompleted": 20
+      },
+      "Ultrasound": {
+        "completed": 6,
+        "nonCompleted": 5
+      },
+      "XRAY": {
+        "completed": 13,
+        "nonCompleted": 1
+      }
+    },
+    "2026-06-06": {
+      "CT": {
+        "completed": 4,
+        "nonCompleted": 1
+      },
+      "EQ": {
+        "completed": 1,
+        "nonCompleted": 0
+      },
+      "MRI": {
+        "completed": 9,
+        "nonCompleted": 6
+      },
+      "Ultrasound": {
+        "completed": 8,
+        "nonCompleted": 3
+      },
+      "XRAY": {
+        "completed": 9,
+        "nonCompleted": 3
+      }
+    },
+    "2026-06-08": {
+      "AM": {
+        "completed": 0,
+        "nonCompleted": 1
+      },
+      "CT": {
+        "completed": 8,
+        "nonCompleted": 11
+      },
+      "EQ": {
+        "completed": 0,
+        "nonCompleted": 1
+      },
+      "LB": {
+        "completed": 1,
+        "nonCompleted": 0
+      },
+      "MRI": {
+        "completed": 15,
+        "nonCompleted": 23
+      },
+      "RE": {
+        "completed": 0,
+        "nonCompleted": 1
+      },
+      "Ultrasound": {
+        "completed": 10,
+        "nonCompleted": 8
+      },
+      "XRAY": {
+        "completed": 23,
+        "nonCompleted": 7
+      }
+    },
+    "2026-06-09": {
+      "CT": {
+        "completed": 10,
+        "nonCompleted": 8
+      },
+      "EQ": {
+        "completed": 1,
+        "nonCompleted": 1
+      },
+      "LB": {
+        "completed": 1,
+        "nonCompleted": 2
+      },
+      "MRI": {
+        "completed": 6,
+        "nonCompleted": 31
+      },
+      "Ultrasound": {
+        "completed": 17,
+        "nonCompleted": 9
+      },
+      "XRAY": {
+        "completed": 17,
+        "nonCompleted": 8
       }
     }
   }
