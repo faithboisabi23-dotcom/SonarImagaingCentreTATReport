@@ -104,6 +104,18 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
+        #visitorCounter {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
         h1 {
             margin: 0;
             font-size: 24px;
@@ -305,6 +317,11 @@
                 gap: 8px;
                 font-size: 13px;
                 max-width: 100%;
+            }
+
+            #visitorCounter {
+                font-size: 11px;
+                padding: 5px 10px;
             }
 
             .header-controls .filter-group {
@@ -546,6 +563,7 @@
                 <button id="applyDateFilter" type="button">Apply</button>
                 <button id="clearDateFilter" type="button">Reset</button>
             </div>
+            <div id="visitorCounter" aria-live="polite">Link opens: loading...</div>
         </div>
         <img src="SONAR%20LOGO%202024%20%281%291%20%281%29.png" alt="Sonar Imaging Centre" />
     </header>
@@ -1136,6 +1154,27 @@
                 loadJson("data/outputs/daily_process_breakdown.json")
             ]);
             return { scorecards: scorecards, modalityStatus: modalityStatus, tatVsTarget: tatVsTarget, tatDistribution: tatDistribution, dailyTrends: dailyTrends, dailyStatusSummary: dailyStatusSummary, dailyProcessBreakdown: dailyProcessBreakdown };
+        }
+
+        async function updateVisitorCounter() {
+            var counterEl = document.getElementById("visitorCounter");
+            if (!counterEl) return;
+
+            var namespace = "faithboisabi23-dotcom";
+            var key = "sonarimagingcentre-tat-report-opens";
+            var url = "https://api.countapi.xyz/hit/" + namespace + "/" + key;
+
+            try {
+                var res = await fetch(url, { cache: "no-store" });
+                if (!res.ok) throw new Error("Counter API failed");
+                var payload = await res.json();
+                var count = Number(payload && payload.value);
+                if (Number.isNaN(count)) throw new Error("Invalid counter value");
+                counterEl.textContent = "Link opens: " + count.toLocaleString();
+            } catch (err) {
+                console.warn("Unable to update visitor counter", err);
+                counterEl.textContent = "Link opens: unavailable";
+            }
         }
 
         function allTrendDates() {
@@ -1795,6 +1834,8 @@
         ["combo_xray","combo_mri","combo_ct","combo_us","tat_dist_xray","tat_dist_mri","tat_dist_ct","tat_dist_us","xray_service_breakdown","mri_service_breakdown","ct_service_breakdown","us_service_breakdown","xray_billing_breakdown","mri_billing_breakdown","ct_billing_breakdown","us_billing_breakdown","modality_status","tat_vs_target","scorecards"].forEach(function (id) {
             Plotly.newPlot(id, [], {}, { displayModeBar: false, responsive: true });
         });
+
+        updateVisitorCounter();
 
         loadDashboardData().then(function (data) {
             dashboardData = data;
