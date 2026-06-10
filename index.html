@@ -116,6 +116,14 @@
             white-space: nowrap;
         }
 
+        #visitorCounter img {
+            display: block;
+            height: 20px;
+            width: auto;
+            max-width: 100%;
+            border: 0;
+        }
+
         h1 {
             margin: 0;
             font-size: 24px;
@@ -1160,42 +1168,8 @@
             var counterEl = document.getElementById("visitorCounter");
             if (!counterEl) return;
 
-            var namespace = "faithboisabi23-dotcom";
-            var today = new Date().toISOString().slice(0, 10);
-            var key = "sonarimagingcentre-tat-report-unique-" + today;
-            var storageKey = "sonar_tat_unique_visit_" + today;
-            var isFirstVisitToday = false;
-
-            try {
-                isFirstVisitToday = localStorage.getItem(storageKey) !== "1";
-            } catch (storageErr) {
-                // If storage is blocked, fall back to counting this load.
-                isFirstVisitToday = true;
-            }
-
-            var endpoint = isFirstVisitToday ? "hit" : "get";
-            var url = "https://api.countapi.xyz/" + endpoint + "/" + namespace + "/" + key;
-
-            try {
-                var res = await fetch(url, { cache: "no-store" });
-                if (!res.ok) throw new Error("Counter API failed");
-                var payload = await res.json();
-                var count = Number(payload && payload.value);
-                if (Number.isNaN(count)) throw new Error("Invalid counter value");
-
-                if (isFirstVisitToday) {
-                    try {
-                        localStorage.setItem(storageKey, "1");
-                    } catch (setErr) {
-                        // Ignore storage write errors.
-                    }
-                }
-
-                counterEl.textContent = "Today's unique visits: " + count.toLocaleString();
-            } catch (err) {
-                console.warn("Unable to update visitor counter", err);
-                counterEl.textContent = "Today's unique visits: unavailable";
-            }
+            var badgeUrl = "https://api.visitorbadge.io/api/daily?user=faithboisabi23-dotcom&repo=SonarImagaingCentreTATReport&label=Today%27s%20unique%20visits&labelColor=%230f4fb8&countColor=%232563eb&style=flat";
+            counterEl.innerHTML = '<img src="' + badgeUrl + '" alt="Today\'s unique visits" referrerpolicy="no-referrer" />';
         }
 
         function allTrendDates() {
