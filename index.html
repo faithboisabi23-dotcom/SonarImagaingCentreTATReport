@@ -1173,7 +1173,43 @@
             if (!counterEl) return;
 
             var badgeUrl = "https://api.visitorbadge.io/api/daily?user=faithboisabi23-dotcom&repo=SonarImagaingCentreTATReport&label=Today%27s%20unique%20visits&labelColor=%230f4fb8&countColor=%232563eb&style=flat";
-            counterEl.innerHTML = '<img src="' + badgeUrl + '" alt="Today\'s unique visits" referrerpolicy="no-referrer" />';
+            var today = new Date().toISOString().slice(0, 10);
+            var visitKey = "sonar_unique_counted_" + today;
+            var countKey = "sonar_unique_count_value_" + today;
+
+            try {
+                var alreadyCounted = localStorage.getItem(visitKey) === "1";
+                var cachedCount = localStorage.getItem(countKey);
+                if (alreadyCounted && cachedCount) {
+                    counterEl.textContent = "Today's unique visits: " + Number(cachedCount).toLocaleString();
+                    return;
+                }
+            } catch (storageReadErr) {
+                // Continue without cache if storage is blocked.
+            }
+
+            try {
+                var res = await fetch(badgeUrl, { cache: "no-store" });
+                if (!res.ok) throw new Error("Badge request failed");
+                var svg = await res.text();
+                var match = svg.match(/aria-label=\"[^\"]*:\s*([0-9,]+)\"/i);
+                if (!match || !match[1]) throw new Error("Unable to parse count");
+
+                var numeric = Number(String(match[1]).replace(/,/g, ""));
+                if (!Number.isFinite(numeric)) throw new Error("Invalid count value");
+
+                counterEl.textContent = "Today's unique visits: " + numeric.toLocaleString();
+
+                try {
+                    localStorage.setItem(visitKey, "1");
+                    localStorage.setItem(countKey, String(numeric));
+                } catch (storageWriteErr) {
+                    // Ignore storage write issues.
+                }
+            } catch (err) {
+                console.warn("Unable to update visitor counter", err);
+                counterEl.textContent = "Today's unique visits: unavailable";
+            }
         }
 
         function allTrendDates() {
